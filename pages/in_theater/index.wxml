@@ -1,0 +1,16 @@
+<view class='warp'>
+
+    <view class="list" wx:for="{{ films }}" wx:key="{{ index }}">
+        <view class='img'>
+            <image src="{{item.images}}"></image>
+        </view>
+        <view class="info">
+            <view class='title'>{{ item.title }}{{ item.original_title }}</view>
+            <view>评分：{{ item.average }} 分</view>
+            <view>类型: {{ item.genres }} </view>
+            <view>导演: {{ item.directors }} </view>
+            <view>演员: {{ item.casts }} </view>
+        </view>
+    </view>
+
+</view>

@@ -1,0 +1,36 @@
+{
+    "pages": [
+        "pages/home_page/index",
+        "pages/in_theater/index",
+        "pages/coming_soon/index",
+        "pages/top250/index"
+    ],
+    "window": {
+        "backgroundTextStyle": "dark",
+        "navigationBarBackgroundColor": "#000",
+        "navigationBarTitleText": "豆瓣图书",
+        "navigationBarTextStyle": "white"
+    },
+    "tabBar": {
+        "position": "top",
+        "selectedColor": "#1aad16",
+        "list": [
+            {
+                "pagePath": "pages/home_page/index",
+                "text": "主页"
+            },
+            {
+                "pagePath": "pages/in_theater/index",
+                "text": "正在热映"
+            },
+            {
+                "pagePath": "pages/coming_soon/index",
+                "text": "即将上映"
+            },
+            {
+                "pagePath": "pages/top250/index",
+                "text": "Top250"
+            }
+        ]
+    }
+}
