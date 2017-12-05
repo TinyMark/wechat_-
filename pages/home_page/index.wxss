@@ -1,21 +1,58 @@
-/**index.wxss**/
-.userinfo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+/* pages/in_theater/index.wxss */
+
+.warp {
+    padding: 25rpx;
 }
 
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
+.mask {
+    width: 100vw;
+    height: 100vh;
+    text-align: center;
+    line-height: 100vh;
 }
 
-.userinfo-nickname {
-  color: #aaa;
+image {
+    width: 270rpx;
+    height: 386rpx;
 }
 
-.usermotto {
-  margin-top: 200px;
+.list {
+    margin: 10rpx;
+    padding: 10rpx;
+    position: relative;
+}
+
+.info {
+    position: absolute;
+    top: 0;
+    margin-left: 300rpx;
+    font-size: 14px;
+    width: 342rpx;
+}
+
+.info view {
+    margin: 10rpx 0;
+}
+
+.info .title {
+    font-size: 36rpx;
+    font-weight: bold;
+    line-height: 36rpx;
+    margin: 10rpx 0 30rpx 0;
+}
+
+.info span {
+    font-size: 24rpx;
+    font-weight: normal;
+}
+
+.info .title span {
+    float: right;
+}
+
+.bottom {
+    width: 100vw;
+    line-height: 40px;
+    text-align: center;
+    color: gray;
 }

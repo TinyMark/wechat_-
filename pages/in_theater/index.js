@@ -1,46 +1,59 @@
 // pages/in_theater/index.js
-var url = 'https://api.douban.com/v2/movie/in_theaters';
+var url = require('../../utils/api.js').in_theaters;
+var utils = require('../../utils/util.js');
+console.log(url)
 Page({
     /**
      * 页面的初始数据
      */
     data: {
-        films: []
+        films: [],
+        currentPage: 0,
+        isShow: true,
+        over: false
+    },
+    showDetail: function (data) {
+        var id = data.currentTarget.dataset.id;
+        wx.navigateTo({
+            url: '../../pages/detail/index?id=' + id,
+        })
+    },
+    rander: function (res) {
+        console.log(res);
+        this.setData({
+            isShow: false,
+            over: res.data.total == this.data.films.length ? true : false,
+            films: this.data.films.concat(
+                res.data.subjects.map(function (v) {
+                    var obj = {
+                        id: v.id,
+                        genres: v.genres.toString().replace(/,/g, "、"),
+                        directors: v.directors.map(function (v) {
+                            return v.name
+                        }).toString().replace(/,/g, "、"),
+                        casts: v.casts.map(function (v) {
+                            return v.name
+                        }).toString().replace(/,/g, "、"),
+                        images: v.images.medium,
+                        year: v.year,
+                        title: v.title,
+                        original_title: v.original_title,
+                        average: v.rating.average
+                    };
+                    return obj
+                })
+            )
+        })
     },
     /**
      * 生命周期函数--监听页面加载
      */
-    onLoad: function (options) {
-        var that = this;
-        wx.request({
-            url: url + '?city=广州&count=5&start=0',
-            header: {
-                "Content-Type": "json"
-            },
-            success: function (res) {
-                console.log(res)
-                that.setData({
-                    films: res.data.subjects.map(function (v) {
-                        var obj = {
-                            id: v.id,
-                            genres: v.genres.toString().replace(/,/g, "、"),
-                            directors: v.directors.map(function (v) {
-                                return v.name
-                            }).toString().replace(/,/g, "、"),
-                            casts: v.casts.map(function (v) {
-                                return v.name
-                            }).toString().replace(/,/g, "、"),
-                            images: v.images.medium,
-                            year: v.year,
-                            title: v.title,
-                            original_title: v.original_title,
-                            average: v.rating.average
-                        };
-                        return obj
-                    })
-                })
-            }
-        })
+    onLoad: function () {
+        utils.getFilms(
+            url,
+            {},
+            this.rander
+        );
     },
 
     /**
@@ -48,6 +61,7 @@ Page({
      */
     onReady: function () {
 
+        console.log('ready')
     },
 
     /**
@@ -55,13 +69,14 @@ Page({
      */
     onShow: function () {
 
+        console.log('show')
     },
 
     /**
      * 生命周期函数--监听页面隐藏
      */
     onHide: function () {
-
+        console.log('hide')
     },
 
     /**
@@ -82,7 +97,16 @@ Page({
      * 页面上拉触底事件的处理函数
      */
     onReachBottom: function () {
-
+        if (this.data.over) {
+            return false
+        }
+        utils.getFilms(
+            url,
+            {
+                page: ++this.data.currentPage
+            },
+            this.rander
+        );
     },
 
     /**

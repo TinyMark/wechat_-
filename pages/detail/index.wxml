@@ -1,7 +1,7 @@
 <view class='mask' wx:if="{{ isShow }}"> 玩儿命加载中...</view>
 <view class='warp'>
-
-    <view class="list" wx:for="{{ films }}" wx:key="{{ index }}" bindtap='showDetail' data-id="{{ item.id }}">
+    123
+    <!-- <view class="list" wx:for="{{ films }}" wx:key="{{ index }}">
         <view class='img'>
             <image src="{{item.images}}"></image>
         </view>
@@ -26,7 +26,6 @@
                 <span>{{ item.casts }}</span>
             </view>
         </view>
-    </view>
+    </view> -->
 
 </view>
-<view class="bottom" wx:if="{{ over }}"> 没有更多啦=_= </view>

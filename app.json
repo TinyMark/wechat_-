@@ -3,12 +3,13 @@
         "pages/home_page/index",
         "pages/in_theater/index",
         "pages/coming_soon/index",
-        "pages/top250/index"
+        "pages/top250/index",
+        "pages/detail/index"       
     ],
     "window": {
         "backgroundTextStyle": "dark",
         "navigationBarBackgroundColor": "#000",
-        "navigationBarTitleText": "豆瓣图书",
+        "navigationBarTitleText": "豆瓣电影",
         "navigationBarTextStyle": "white"
     },
     "tabBar": {
