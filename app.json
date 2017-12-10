@@ -17,15 +17,21 @@
         "list": [
             {
                 "pagePath": "pages/in_theater/index",
-                "text": "正在热映"
+                "text": "正在热映",
+                "iconPath": "./images/tabBar-icon/film area.png",
+                "selectedIconPath": "./images/tabBar-icon/film area_active.png"
             },
             {
                 "pagePath": "pages/coming_soon/index",
-                "text": "即将上映"
+                "text": "即将上映",
+                "iconPath": "./images/tabBar-icon/film.png",
+                "selectedIconPath": "./images/tabBar-icon/film_active.png"
             },
             {
                 "pagePath": "pages/top250/index",
-                "text": "Top250"
+                "text": "Top250",
+                "iconPath": "./images/tabBar-icon/top.png",
+                "selectedIconPath": "./images/tabBar-icon/top_active.png"
             }
         ]
     }

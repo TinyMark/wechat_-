@@ -8,7 +8,7 @@
             <text>{{ data.title }}</text>
             <text>{{ data.year }}</text>
         </view>
-        <view>评分：
+        <view>评分:
             <text>{{ data.rating }}</text>
         </view>
         <view>导演：
