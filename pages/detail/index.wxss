@@ -1,58 +1,46 @@
-/* pages/in_theater/index.wxss */
-
 .warp {
-    padding: 25rpx;
-}
-
-.mask {
-    width: 100vw;
-    height: 100vh;
-    text-align: center;
-    line-height: 100vh;
-}
-
-image {
-    width: 270rpx;
-    height: 386rpx;
-}
-
-.list {
-    margin: 10rpx;
-    padding: 10rpx;
-    position: relative;
-}
-
-.info {
-    position: absolute;
-    top: 0;
-    margin-left: 300rpx;
+    display: flex;
+    flex-wrap: wrap;
     font-size: 14px;
-    width: 342rpx;
 }
 
-.info view {
-    margin: 10rpx 0;
+.detail_info {
+    width: 196px;
 }
 
-.info .title {
-    font-size: 36rpx;
+.detail_info view {
+    margin-bottom: 5px;
+}
+
+.detail_info view text {
+    font-size: 12px;
+}
+
+.warp>view {
+    padding: 5px;
+}
+
+.info_title {
+    display: flex;
+    justify-content: space-between;
+}
+
+.info_title text:nth-of-type(1) {
+    font-size: 20px;
     font-weight: bold;
-    line-height: 36rpx;
-    margin: 10rpx 0 30rpx 0;
 }
 
-.info span {
-    font-size: 24rpx;
-    font-weight: normal;
+.info_title text:nth-of-type(2) {
+    line-height: 26px;
+    font-size: 14px;
 }
 
-.info .title span {
-    float: right;
+.detail_info view:nth-of-type(2) text {
+    color: orangered;
 }
 
-.bottom {
-    width: 100vw;
-    line-height: 40px;
-    text-align: center;
-    color: gray;
+.detail_summary view {
+    margin: 5px 0;
+    font-size: 12px;
+    text-indent: 24px;
 }

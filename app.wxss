@@ -9,3 +9,34 @@
     padding: 200rpx 0;
     box-sizing: border-box;
 }
+
+.warp {
+    padding: 25rpx;
+}
+
+page {
+    background-color: #f0f0f0;
+    overflow-x: hidden;
+}
+
+.mask {
+    width: 100vw;
+    height: 100vh;
+    text-align: center;
+    line-height: 100vh;
+    position: fixed;
+    z-index: 99999;
+    color: snow;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+image {
+    width: 270rpx;
+    height: 386rpx;
+}
+
+.list {
+    margin: 10rpx;
+    padding: 10rpx;
+    position: relative;
+}

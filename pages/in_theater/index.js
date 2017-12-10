@@ -13,6 +13,9 @@ Page({
         over: false
     },
     showDetail: function (data) {
+        this.setData({
+            isShow: true
+        })
         var id = data.currentTarget.dataset.id;
         wx.navigateTo({
             url: '../../pages/detail/index?id=' + id,
@@ -68,8 +71,7 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
-
-        console.log('show')
+        if (this.data.films.length) this.setData({ isShow: false })
     },
 
     /**
@@ -97,9 +99,10 @@ Page({
      * 页面上拉触底事件的处理函数
      */
     onReachBottom: function () {
-        if (this.data.over) {
-            return false
-        }
+        if (this.data.over) return false;
+        this.setData({
+            isShow: true
+        })
         utils.getFilms(
             url,
             {

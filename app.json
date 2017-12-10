@@ -1,10 +1,9 @@
 {
     "pages": [
-        "pages/home_page/index",
         "pages/in_theater/index",
         "pages/coming_soon/index",
         "pages/top250/index",
-        "pages/detail/index"       
+        "pages/detail/index"
     ],
     "window": {
         "backgroundTextStyle": "dark",
@@ -13,13 +12,9 @@
         "navigationBarTextStyle": "white"
     },
     "tabBar": {
-        "position": "top",
+        "position": "bottom",
         "selectedColor": "#1aad16",
         "list": [
-            {
-                "pagePath": "pages/home_page/index",
-                "text": "主页"
-            },
             {
                 "pagePath": "pages/in_theater/index",
                 "text": "正在热映"

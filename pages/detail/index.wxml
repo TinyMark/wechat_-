@@ -1,31 +1,35 @@
 <view class='mask' wx:if="{{ isShow }}"> 玩儿命加载中...</view>
 <view class='warp'>
-    123
-    <!-- <view class="list" wx:for="{{ films }}" wx:key="{{ index }}">
-        <view class='img'>
-            <image src="{{item.images}}"></image>
+    <view class='detail_img'>
+        <image src='{{ data.images }}'></image>
+    </view>
+    <view class='detail_info'>
+        <view class='info_title'>
+            <text>{{ data.title }}</text>
+            <text>{{ data.year }}</text>
         </view>
-        <view class="info">
-            <view class='title'>
-                {{ item.title }}
-                <span>{{ item.average }}分</span>
-            </view>
-            <view>上映时间:
-                <span>{{ item.year }}</span>
-            </view>
-            <view>又名：
-                <span>{{ item.original_title }}</span>
-            </view>
-            <view>类型:
-                <span>{{ item.genres }}</span>
-            </view>
-            <view>导演:
-                <span>{{ item.directors }}</span>
-            </view>
-            <view>演员:
-                <span>{{ item.casts }}</span>
-            </view>
+        <view>评分：
+            <text>{{ data.rating }}</text>
         </view>
-    </view> -->
-
+        <view>导演：
+            <text>{{ data.directors }}</text>
+        </view>
+        <view>主演：
+            <text>{{ data.casts }}</text>
+        </view>
+        <view>类型：
+            <text>{{ data.genres }}</text>
+        </view>
+        <view>国家/地区：
+            <text>{{ data.countries }}</text>
+        </view>
+        <view>
+            看过（
+            <text>{{ data.reviews_count }}</text>） 想看（
+            <text>{{ data.ratings_count }}</text>）</view>
+    </view>
+    <view class='detail_summary'>
+        <text>剧情简介：</text>
+        <view>{{ data.summary }}</view>
+    </view>
 </view>

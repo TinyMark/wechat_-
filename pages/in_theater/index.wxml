@@ -8,10 +8,10 @@
         <view class="info">
             <view class='title'>
                 {{ item.title }}
-                <span>{{ item.average }}分</span>
-            </view>
-            <view>上映时间:
                 <span>{{ item.year }}</span>
+            </view>
+            <view>
+                <span class="point">{{ item.average }} 分</span>
             </view>
             <view>又名：
                 <span>{{ item.original_title }}</span>

@@ -1,17 +1,40 @@
 // pages/in_theater/index.js
-var url = 'https://api.douban.com/v2/movie/in_theaters';
 var utils = require('../../utils/util.js');
 Page({
     /**
      * 页面的初始数据
      */
     data: {
-        isShow: true
+        isShow: true,
+        data: {}
     },
     rander: function (res) {
         console.log(res);
+        var res = res.data
         this.setData({
-
+            isShow: false,
+            data: {
+                aka: res.aka.toString().replace(/,/g, '、'),
+                directors: res.directors.map(function (v) {
+                    return v.name
+                }).toString().replace(/,/g, "、"),
+                casts: res.casts.map(function (v) {
+                    return v.name
+                }).toString().replace(/,/g, "、"),
+                countries: res.countries.toString().replace(/,/g, '、'),
+                genres: res.genres.toString().replace(/,/g, '、'),
+                images: res.images.medium,
+                original_title: res.original_title,
+                rating: res.rating.average,
+                summary: res.summary,
+                title: res.title,
+                year: res.year,
+                reviews_count: res.reviews_count,
+                ratings_count: res.ratings_count
+            }
+        })
+        wx.setNavigationBarTitle({
+            title: res.title
         })
     },
     /**
