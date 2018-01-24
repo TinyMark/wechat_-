@@ -1,44 +1,25 @@
 /* pages/in_theater/index.wxss */
 
-.warp {
-    padding: 25rpx;
-}
-
-.mask {
-    width: 100vw;
-    height: 100vh;
-    text-align: center;
-    line-height: 100vh;
-}
-
-image {
-    width: 270rpx;
-    height: 386rpx;
-}
-
-.list {
-    margin: 10rpx;
-    padding: 10rpx;
-    position: relative;
-}
+/* pages/in_theater/index.wxss */
 
 .info {
     position: absolute;
     top: 0;
     margin-left: 300rpx;
-    font-size: 14px;
+    font-size: 14rpx;
     width: 342rpx;
 }
 
 .info view {
+    font-size: 24rpx;
     margin: 10rpx 0;
 }
 
 .info .title {
-    font-size: 36rpx;
+    font-size: 30rpx;
     font-weight: bold;
     line-height: 36rpx;
-    margin: 10rpx 0 30rpx 0;
+    margin: 10rpx 0 20rpx 0;
 }
 
 .info span {
@@ -55,4 +36,8 @@ image {
     line-height: 40px;
     text-align: center;
     color: gray;
+}
+
+.point {
+    color: orangered;
 }

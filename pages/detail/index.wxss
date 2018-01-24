@@ -1,23 +1,23 @@
 .warp {
     display: flex;
     flex-wrap: wrap;
-    font-size: 14px;
+    font-size: 28rpx;
 }
 
 .detail_info {
-    width: 196px;
+    width: 392rpx;
 }
 
 .detail_info view {
-    margin-bottom: 5px;
+    margin-bottom: 10rpx;
 }
 
 .detail_info view text {
-    font-size: 12px;
+    font-size: 24rpx;
 }
 
 .warp>view {
-    padding: 5px;
+    padding: 10rpx;
 }
 
 .info_title {
@@ -26,13 +26,13 @@
 }
 
 .info_title text:nth-of-type(1) {
-    font-size: 20px;
+    font-size: 40rpx;
     font-weight: bold;
 }
 
 .info_title text:nth-of-type(2) {
-    line-height: 26px;
-    font-size: 14px;
+    line-height: 52rpx;
+    font-size: 28rpx;
 }
 
 .detail_info view:nth-of-type(2) text {
@@ -40,7 +40,7 @@
 }
 
 .detail_summary view {
-    margin: 5px 0;
-    font-size: 12px;
-    text-indent: 24px;
+    margin: 10rpx 0;
+    font-size: 24rpx;
+    text-indent: 48rpx;
 }

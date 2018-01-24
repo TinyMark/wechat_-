@@ -1,3 +1,5 @@
+const api = require('./api.js');
+
 const formatTime = date => {
     const year = date.getFullYear()
     const month = date.getMonth() + 1
@@ -15,9 +17,9 @@ const formatNumber = n => {
 }
 const getDetail = (id, callback) => {
     wx.request({
-        url: 'https://api.douban.com/v2/movie/subject/' + id,
+        url: api.detail + id,
         header: {
-            "Content-Type": "json"
+            "Content-Type": "application/json; charset=utf-8"
         },
         success: function (res) {
             callback(res);
@@ -31,11 +33,17 @@ const getFilms = (url, ops, callback) => {
         start: (ops.page || 0) * (ops.count || 5)
     }
     wx.request({
-        url: url + '?city=' + options.city + '&count= ' + options.count + '&start=' + options.start,
+        url: api[url],
+        data: {
+            city: options.city,
+            count: options.count,
+            start: options.start
+        },
         header: {
-            "Content-Type": "json"
+            "Content-Type": "application/json; charset=utf-8"
         },
         success: function (res) {
+            console.log(res)
             callback(res);
         }
     })

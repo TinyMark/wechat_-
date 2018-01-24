@@ -1,7 +1,7 @@
 // pages/in_theater/index.js
-var url = require('../../utils/api.js').in_theaters;
+var url = "in_theaters";
 var utils = require('../../utils/util.js');
-console.log(url)
+// console.log(url)
 Page({
     /**
      * 页面的初始数据
@@ -22,7 +22,7 @@ Page({
         })
     },
     rander: function (res) {
-        console.log(res);
+        // console.log(res);
         this.setData({
             isShow: false,
             over: res.data.total == this.data.films.length ? true : false,

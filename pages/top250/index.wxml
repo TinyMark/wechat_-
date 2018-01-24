@@ -1,17 +1,17 @@
 <view class='mask' wx:if="{{ isShow }}"> 玩儿命加载中...</view>
 <view class='warp'>
 
-    <view class="list" wx:for="{{ films }}" wx:key="{{ index }}">
+    <view class="list" wx:for="{{ films }}" wx:key="{{ index }}" bindtap='showDetail' data-id="{{ item.id }}">
         <view class='img'>
             <image src="{{item.images}}"></image>
         </view>
         <view class="info">
             <view class='title'>
                 {{ item.title }}
-                <span>{{ item.average }}分</span>
-            </view>
-            <view>上映时间:
                 <span>{{ item.year }}</span>
+            </view>
+            <view>
+                <span class="point">{{ item.average }} 分</span>
             </view>
             <view>又名：
                 <span>{{ item.original_title }}</span>

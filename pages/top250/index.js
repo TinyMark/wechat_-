@@ -1,7 +1,7 @@
 // pages/in_theater/index.js
-var url = require('../../utils/api.js').top250;
-console.log(url)
+var url = "top250";
 var utils = require('../../utils/util.js');
+// console.log(url)
 Page({
     /**
      * 页面的初始数据
@@ -11,6 +11,15 @@ Page({
         currentPage: 0,
         isShow: true,
         over: false
+    },
+    showDetail: function (data) {
+        this.setData({
+            isShow: true
+        })
+        var id = data.currentTarget.dataset.id;
+        wx.navigateTo({
+            url: '../../pages/detail/index?id=' + id,
+        })
     },
     rander: function (res) {
         console.log(res);
@@ -62,8 +71,7 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
-
-        console.log('show')
+        if (this.data.films.length) this.setData({ isShow: false })
     },
 
     /**
@@ -91,9 +99,10 @@ Page({
      * 页面上拉触底事件的处理函数
      */
     onReachBottom: function () {
-        if (this.data.over) {
-            return false
-        }
+        if (this.data.over) return false;
+        this.setData({
+            isShow: true
+        })
         utils.getFilms(
             url,
             {

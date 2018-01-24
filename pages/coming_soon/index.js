@@ -1,5 +1,5 @@
 // pages/in_theater/index.js
-var url = require('../../utils/api.js').coming_soon;
+var url = "coming_soon";
 var utils = require('../../utils/util.js');
 Page({
     /**
@@ -10,6 +10,15 @@ Page({
         currentPage: 0,
         isShow: true,
         over: false
+    },
+    showDetail: function (data) {
+        this.setData({
+            isShow: true
+        })
+        var id = data.currentTarget.dataset.id;
+        wx.navigateTo({
+            url: '../../pages/detail/index?id=' + id,
+        })
     },
     rander: function (res) {
         console.log(res);
